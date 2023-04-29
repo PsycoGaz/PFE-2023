@@ -20,7 +20,7 @@ const gigSchema = new Schema({
     },
     starNumber:{
         type: Number,
-        required: true,
+        required: false,
 
     },
     category:{
@@ -32,7 +32,7 @@ const gigSchema = new Schema({
         required: true,
     },
 
-    cover :{
+    cover:{
         type: String,
         required: true,
     },
@@ -60,8 +60,9 @@ const gigSchema = new Schema({
         type: Number,
         default: 0,
     },
-
-
+    shortTile:{
+        type: String,
+        required: false,},
 },
 {
     timestamps: true,

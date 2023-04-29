@@ -23,6 +23,7 @@ import {
   useQuery,
 } from '@tanstack/react-query'
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const queryClient = new QueryClient()
@@ -31,11 +32,17 @@ function App() {
     return (
       <div className="app">
         <QueryClientProvider client={queryClient}>
+          <ToastContainer 
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+          />
           <Navbar />
           <Outlet />
           <Footer />
         </QueryClientProvider>
-        <ToastContainer />
       </div>
     )
   }

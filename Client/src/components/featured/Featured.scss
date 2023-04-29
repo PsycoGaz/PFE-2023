@@ -1,0 +1,64 @@
+.featured {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    color: white;
+    
+    
+      
+  
+  
+        .search {
+          background-color: white;
+          border-radius: 5px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          overflow: hidden;
+          
+  
+          .searchInput {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            img {
+              width: 20px;
+              height: 20px;
+              margin: 10px;
+            }
+  
+            input {
+              border: none;
+              outline: none;
+  
+              &::placeholder {
+                color: gray;
+              }
+            }
+          }
+  
+          button {
+            width: 120px;
+            height: 50px;
+            border: none;
+            background-color: #1dbf73;
+            color: white;
+            align-self: flex-end;
+            cursor: pointer;
+          }
+        }
+  
+        
+  
+          span {
+            width: max-content;
+          }
+  
+         
+        
+      
+  
+      
+    }
+  

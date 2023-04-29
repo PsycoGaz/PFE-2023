@@ -4,6 +4,7 @@ import newRequest from '../../utils/utils';
 import Review from '../review/Review';
 import './Reviews.scss'
 import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export const Reviews = ({ gigId }) => {
@@ -22,7 +23,11 @@ export const Reviews = ({ gigId }) => {
       return newRequest.post(`/reviews`, review)
     },
     onSuccess: () => {
+      toast.success("Review added successfully")
       queryClient.invalidateQueries(['reviews'])
+    },
+    onError: (res) => {
+      toast.warning(res.response.data);
     }
  })
  
@@ -34,10 +39,9 @@ export const Reviews = ({ gigId }) => {
     e.preventDefault ()
     const desc = e.target[0].value
     const star = e.target[1].value
-   try{mutation.mutate({gigId,desc, star})} 
-   catch(err){toast.error("Something went wrong",{
-    position: toast.POSITION.TOP_CENTER
-});}
+   try{mutation.mutate({gigId,desc,star})
+  } 
+   catch(err){toast.error("Something went wrong");}
   }
 
   return (

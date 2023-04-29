@@ -7,7 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 const GigCard = ({ item }) => {
   const{isLoading, error, data}= useQuery(
     {
-      queryKey: ["gigUser"],
+      queryKey: [item.userId],
       queryFn: () => 
       newRequest.get(`/users/${item.userId}`).then((res) => res.data),
     }

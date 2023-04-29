@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react'
 import newRequest from '../../utils/utils';
 import './Review.scss'
+import { toast } from 'react-toastify';
 
 export const Review = ({review}) => {
   const { isLoading, error, data} = useQuery({
@@ -11,6 +12,7 @@ export const Review = ({review}) => {
         return res.data; 
       })
   });
+  
   return (
     <div className="review">
       {isLoading ? "Loading ": error ?"SWR" :  <div className="user">

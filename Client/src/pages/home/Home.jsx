@@ -1,13 +1,14 @@
 import React from 'react'
 import './Home.scss'
 import UC from '../../assets/svgUC.svg'
-
+import Featured from '../../components/featured/Featured'
 import { Link } from 'react-router-dom';
+
 const Home = () => {console.log(UC)
   return (
     <div className='main'>
       <img className='svg' src={UC}/>
-
+      <Featured/>
         <div className='categories' >
           <Link to="/gigs?category=" className='Link'>
           <img src="https://images.pexels.com/photos/14953886/pexels-photo-14953886.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />

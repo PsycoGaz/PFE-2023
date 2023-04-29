@@ -16,7 +16,7 @@ function Gig() {
     queryKey: ['gig'],
     queryFn: () =>
       newRequest.get(`/gigs/single/${id}`).then((res) => {
-        return res.data; 
+        return res.data;
       })
   });
 
@@ -27,7 +27,7 @@ function Gig() {
     error: errorUser,
     data: dataUser,
   } = useQuery({
-    queryKey: ["user"],
+    queryKey: [userId],
     queryFn: () =>
       newRequest.get(`/users/${data.userId}`).then((res) => {
         return res.data;
@@ -40,7 +40,7 @@ function Gig() {
       {isLoading ? "Loading" : error ? "swr" :
         <div className="container">
           <div className="left">
-            <span className="breadcrumbs">Liverr {">"} Graphics & Design {">"} </span>
+            
             <h1>{data.title}</h1>
             {isLoadingUser ? ("user Loading") : errorUser ? ("SWR") :
               <div className="user">
@@ -123,7 +123,7 @@ function Gig() {
                   </p>
                 </div>
               </div>)}
-                    <Reviews gigId={id}/>
+            <Reviews gigId={id} />
           </div>
           <div className="right">
             <div className="price">

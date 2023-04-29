@@ -1,9 +1,7 @@
-
-
 import React, { useEffect, useRef, useState } from "react";
 import "./Gigs.scss";
 
-import GigCard from "../../components/gigCard/GigCard";
+import GigCard from "../../components/gigcard/GigCard";
 import { useQuery } from "@tanstack/react-query";
 
 import newRequest from "../../utils/utils";
@@ -40,14 +38,11 @@ function Gigs() {
   return (
     <div className="gigs">
       <div className="container">
-        <span className="breadcrumbs">FixItPlomberie </span>
-        <h1 >AI artists</h1>
-        <p>
-          Explore Boundaries and technology
-        </p>
+       
+       
         <div className="menu">
           <div className="left">
-            <span>Buget</span>
+            <span>Budget</span>
             <input type="text" ref={minRef} placeholder="Min" />
             <input type="text" ref={maxRef} placeholder="Max" />
             <button onClick={apply}>Apply</button>

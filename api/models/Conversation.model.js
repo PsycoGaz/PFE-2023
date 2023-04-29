@@ -3,22 +3,22 @@ const{Schema} = mongoose;
 
 const conversationSchema = new Schema({
     id:{
-        type: string,
+        type: String,
         required: true,
         unique: true,
     }, 
     sellerid:{
-        type: string,
+        type: String,
         required: true,
         unique: true,
     }, 
     buyerid:{
-        type: string,
+        type: String,
         required: true,
         unique: true,
     }, 
     id:{
-        type: string,
+        type: String,
         required: true,
         unique: true,
     }, 
@@ -31,7 +31,7 @@ const conversationSchema = new Schema({
         required: true,
     },
     readbybuyer:{
-        type: string,
+        type: String,
         required: false,
     },
 },

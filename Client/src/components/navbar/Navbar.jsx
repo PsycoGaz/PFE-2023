@@ -22,7 +22,7 @@ const Navbar = () => {
     const handleLogout = async () => {
         try {
             await newRequest.post("/auth/logout");
-            localStorage.setItem("currentUser", null);
+            localStorage.removeItem("currentUser");
             navigate("/")
         } catch (err) {
 
@@ -60,8 +60,8 @@ const Navbar = () => {
                                 {
                                     currentUser?.isSeller && (
                                         <>
-                                            <Link className='link' to="/mygigs">Gigs</Link>
-                                            <Link className='link' to="/add">Add New Gig</Link>
+                                            <Link className='link' to="/mygigs">My Jobs</Link>
+                                            <Link className='link' to="/add">Add New Job</Link>
 
                                         </>
                                     )

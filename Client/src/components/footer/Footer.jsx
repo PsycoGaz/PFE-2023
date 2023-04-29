@@ -5,33 +5,12 @@ function Footer() {
   return (
     <div className="footer">
       <div className="container">
-        <div className="top">
-          <div className="item">
-            <h2>Categories</h2>
-           
-          </div>
-          <div className="item">
-            <h2>About</h2>
-            
-          </div>
-          <div className="item">
-            <h2>Support</h2>
-            
-          </div>
-          <div className="item">
-            <h2>Community</h2>
-            
-          </div>
-          <div className="item">
-            <h2>More From FixIt</h2>
-            
-          </div>
-        </div>
+        
         <hr className="line"/>
         <div className="bottom">
           <div className="left">
             <h2>FixIt</h2>
-            <span>© FixIt International Ltd. 2023</span>
+            <span>© FixIt Tunisia. 2023</span>
           </div>
           <div className="right">
             <div className="social">
@@ -41,9 +20,7 @@ function Footer() {
               <img src="https://w7.pngwing.com/pngs/969/351/png-transparent-pinterest-logo-area-text-symbol-brand-app-pinterest-text-trademark-pin-thumbnail.png" alt="" />
               <img src="https://w7.pngwing.com/pngs/822/208/png-transparent-instagram-application-icon-social-media-logo-symbol-insta-text-monochrome-social-media-marketing-thumbnail.png" alt="" />
             </div>
-            <div className="link">
-              <span>English</span>
-            </div>
+            
 
             <span>Accessibility</span>
           </div>
