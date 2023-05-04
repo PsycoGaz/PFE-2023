@@ -30,7 +30,7 @@ const conversationSchema = new Schema({
         type: Boolean,
         required: true,
     },
-    readbybuyer:{
+    lastMessage:{
         type: String,
         required: false,
     },

@@ -1,4 +1,4 @@
-//import createError from "../utils/createError"
+import createError from "../utils/createError.js";
 import Conversation from "../models/Conversation.model.js";
 export const createConversation = async (req, res, next) => {
     const newConversation = new Conversation({
@@ -23,8 +23,8 @@ export const updateConversation = async (req, res, next) => {
     try {
         const updatedConversation = await Conversation.findOneAndUpdate({id:req.params.id},
             {$set: {
-                readbyseller: req.isSeller,
-                readbybuyer: !req.isSeller,
+                readbyseller: true,
+                readbybuyer: true,
             }},
             {new: true}
             );

@@ -8,8 +8,8 @@ import {
 const router = express.Router();
 
 router.get("/", verifyToken, getConversations);
-router.get("/", verifyToken, createConversation);
+router.post("/", verifyToken, createConversation);
 router.get("/single/:id", verifyToken, getSingleConversation);
-router.get("/:id", verifyToken, updateConversation);
+router.put("/:id", verifyToken, updateConversation);
 
 export default router;

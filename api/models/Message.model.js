@@ -2,18 +2,18 @@ import mongoose from "mongoose";
 const{Schema} = mongoose;
 
 const messageSchema = new Schema({
-    conversationid:{
-        type: string,
+    conversationId:{
+        type: String,
         required: true,
         
     }, 
-    userid:{
-        type: string,
+    userId:{
+        type: String,
         required: true,
         
     }, 
     desc:{
-        type: string,
+        type: String,
         required: true,
         
     }, 
