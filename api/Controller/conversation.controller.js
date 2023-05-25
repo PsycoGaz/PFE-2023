@@ -39,6 +39,7 @@ export const getSingleConversation = async (req, res, next) => {
     
  try {
       const conversation = await Conversation.findOne({id:req.params.id});  
+      if(!conversation) return next(createError(404, "Conversation not found"));
       res.status(200).send(conversation);
     } catch (err) {
         next(err)
@@ -47,7 +48,7 @@ export const getSingleConversation = async (req, res, next) => {
 }
 export const getConversations = async (req, res, next) => {
 try {
-    const Conversations = await Conversation.find(req.isSeller ? {sellerid: req.userId} : {buyerid: req.userId});    
+    const Conversations = await Conversation.find(req.isSeller ? {sellerid: req.userId} : {buyerid: req.userId}).sort({updatedAt: -1});    
     res.status(200).send(Conversations);
     } catch (err) {
         next(err)

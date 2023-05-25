@@ -5,6 +5,8 @@ import newRequest from "../../utils/utils";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import upload from '../../utils/upload';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Register() {
   const [file, setFile] = useState(null);
@@ -37,6 +39,7 @@ function Register() {
       navigate("/")
     } catch (err) {
       setError(err.response.data);
+      toast.error("Fields with * are required",{position: toast.POSITION.TOP_CENTER});
     }
   }
  

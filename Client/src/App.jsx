@@ -12,6 +12,8 @@ import Add from './pages/add/Add'
 import Messages from './pages/messages/Messages'
 import Message from './pages/message/Message'
 import Register from './pages/register/Register';
+import  Success  from './pages/success/Success';
+import  Pay  from './pages/pay/Pay';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -90,6 +92,14 @@ function App() {
         {
           path: "/Register",
           element: <Register />,
+        },
+        {
+          path: "/pay/:id",
+          element: <Pay />,
+        },
+        {
+          path: "/success",
+          element: <Success />,
         },
       ]
     },

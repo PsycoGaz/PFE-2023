@@ -6,6 +6,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useParams } from "react-router-dom";
 import newRequest from "../../utils/utils";
 import Reviews from "../../components/reviews/Reviews";
+import { Link } from "react-router-dom";
 
 function Gig() {
 
@@ -152,7 +153,10 @@ function Gig() {
               ))}
 
             </div>
+            <Link to={`/pay/${id}`}>
             <button>Continue</button>
+            </Link>
+            
           </div>
         </div>}
     </div>

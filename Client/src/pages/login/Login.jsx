@@ -3,6 +3,8 @@ import "./Login.scss";
 import newRequest from "../../utils/utils";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -20,7 +22,8 @@ function Login() {
       navigate("/")
       
     } catch (err) {
-      setError(err.response.data);
+      //setError(err.response.data);
+      toast.error(err.response.data,{position: toast.POSITION.TOP_CENTER});
     }
   };
 

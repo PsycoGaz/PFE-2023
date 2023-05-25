@@ -10,12 +10,12 @@ const conversationSchema = new Schema({
     sellerid:{
         type: String,
         required: true,
-        unique: true,
+       
     }, 
     buyerid:{
         type: String,
         required: true,
-        unique: true,
+       
     }, 
     id:{
         type: String,

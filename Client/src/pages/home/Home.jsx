@@ -4,6 +4,7 @@ import UC from '../../assets/svgUC.svg'
 import Featured from '../../components/featured/Featured'
 import { Link } from 'react-router-dom';
 
+
 const Home = () => {console.log(UC)
   return (
     <div className='main'>
