@@ -69,9 +69,9 @@ function Gig() {
               }
 
             </Carousel>
-            <h2>About This Gig</h2>
+            <h2>About This Job</h2>
             <p>
-              {data.description}
+              {data.gigDescription}
             </p>
             {isLoadingUser ? ("user Loading") : errorUser ? ("SWR") : (
               <div className="seller">

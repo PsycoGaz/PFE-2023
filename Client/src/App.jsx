@@ -1,5 +1,7 @@
 import React from 'react'
+import 'bootstrap/dist/css/bootstrap.css';
 import './App.scss'
+
 import Navbar from './components/navbar/Navbar'
 import Login from "./pages/login/Login";
 import Footer from './components/footer/Footer'
@@ -14,6 +16,7 @@ import Message from './pages/message/Message'
 import Register from './pages/register/Register';
 import  Success  from './pages/success/Success';
 import  Pay  from './pages/pay/Pay';
+import UserProfile from './pages/userProfile/userProfile';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -100,6 +103,10 @@ function App() {
         {
           path: "/success",
           element: <Success />,
+        },
+        {
+          path: "/userprofile",
+          element: <UserProfile />,
         },
       ]
     },
