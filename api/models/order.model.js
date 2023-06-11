@@ -31,6 +31,11 @@ const orderSchema = new Schema({
         type: Boolean,
         default: false,
     },
+    isDelivered: {
+        type: Boolean,
+        default: false,
+        required: true,
+    },
     payment_intent: {
         type: String,
         required: true,

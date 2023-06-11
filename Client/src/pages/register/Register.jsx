@@ -76,9 +76,9 @@ function Register() {
           <button type="submit">Register</button>
         </div>
         <div className="right">
-          <h1>I want to become a seller</h1>
+          <h1>I want to become a Service Provider</h1>
           <div className="toggle">
-            <label htmlFor="">Activate the seller account</label>
+            <label htmlFor="">Activate the Service provider account</label>
             <label className="switch">
               <input type="checkbox" onChange={handleSeller} />
               <span className="slider round"></span>

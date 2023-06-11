@@ -1,13 +1,13 @@
 import React from 'react'
 import './Orders.scss'
 import newRequest from '../../utils/utils'
-import { useQuery } from '@tanstack/react-query'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useNavigate } from 'react-router-dom'
 import Orderline from '../../components/orderline/orderline'
 
 const Orders = () => {
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-  
+  const queryClient = useQueryClient();
   const { isLoading, error, data } = useQuery({
     queryKey: ['orders'],
     queryFn: () =>
@@ -15,8 +15,23 @@ const Orders = () => {
       ).then((res) => {
         return res.data;
       })
-  })
-  console.log(data)
+  });
+  const mutation = useMutation({
+    mutationFn: (id) => {
+      return newRequest.put(`/orders/completed/${id}`);
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries(["Orders"]);
+    },
+    onError: (res) => {
+      toast.warning(res.response.data);
+    }
+  });
+  const handleRead = (id) => {
+    mutation.mutate(id);
+    
+  };
+  
   const navigate = useNavigate()
   const handleContact = async (order) => {
     const sellerId = order.sellerId
@@ -48,8 +63,9 @@ const Orders = () => {
               <th>Title</th>
               <th>Price</th>
               <th>{currentUser.isSeller ? "Buyer" : "Seller"}</th>
-              <th>completed ?</th>
+              <th>Completed ?</th>
               <th>Contact</th>
+              <th>Delivered?</th>
             </tr>
             {isLoading
             ? "loading"

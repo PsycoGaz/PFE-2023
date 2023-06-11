@@ -1,4 +1,5 @@
 .navbar {
+  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,6 +12,7 @@
  &.active {
    background-color: white;
     color: black;
+    height: fit-content;
     .link{
       color: black;
     }
@@ -18,8 +20,8 @@
   }
 
   .container {
-    width: 90%;
-
+    width: 100%;
+    
     display: flex;
     justify-content: space-between;
     padding: 20px 0px;

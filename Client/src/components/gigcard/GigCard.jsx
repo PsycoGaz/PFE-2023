@@ -35,7 +35,7 @@ const GigCard = ({ item }) => {
           <div className="price">
             <span>STARTING AT</span>
             <h2>
-              $ {item.price}
+              TND {item.price}
             </h2>
           </div>
         </div>  

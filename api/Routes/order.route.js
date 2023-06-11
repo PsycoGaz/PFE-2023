@@ -1,11 +1,12 @@
 import express from "express";
 import { verifyToken } from "../middleware/jwt.js";
-import { createOrder, getOrders, intent, confirm } from "../Controller/order.controller.js";
+import { createOrder, getOrders, intent, confirm, updateOrder } from "../Controller/order.controller.js";
 
 const router = express.Router();
 
 //router.post("/:gigId", verifyToken, createOrder );
 router.get("/", verifyToken, getOrders );
 router.post("/create-payment-intent/:id", verifyToken, intent );
-router.put("/", verifyToken, confirm)
+router.put("/", verifyToken, confirm);
+router.put("/:id", verifyToken, updateOrder);
 export default router;

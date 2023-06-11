@@ -47,10 +47,9 @@ const Navbar = () => {
 
 
                 <div className='links'>
-                    {/* <h3>Businesses</h3>
-                    <h3>Explore</h3> */}
+                    
 
-                    {!currentUser?.isSeller && <h3> Become a Seller </h3>}
+                    {!currentUser?.isSeller }
                     {!currentUser && <> <Link to="/login" className='link'><h3>Sign in</h3></Link> <button className='btn'><Link to="/register" className='link' >Join</Link></button>  </>}
                     {currentUser &&
                         (<div className="user" onClick={() => setOpen(!open)}>

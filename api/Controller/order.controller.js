@@ -65,10 +65,31 @@ export const getOrders = async (req, res, next) => {
 }
 export const confirm = async (req, res, next) => {
     try {
-       const orders = await Order.findOneAndUpdate({payment_intent: req.body.payment_intent}, {$set:{isCompleted: true}})
+       const orders = await Order.findOneAndUpdate({payment_intent: req.body.payment_intent},
+        {
+            $set: {
+              isCompleted: true,
+            },
+          } )
          res.status(200).send("Ordre Confirmé");
     } catch (err) {
         next(err)
     }
 
 }
+export const updateOrder = async (req, res, next) => {
+    try {
+      const updatedOrder = await Order.findOneAndUpdate(
+        { _id: req.params.id },
+        {
+          $set: {
+            isDelivered: true,
+          },
+        },
+        { new: true }
+      );
+      res.status(201).send(updatedOrder);
+    } catch (err) {
+      next(err);
+    }
+  };

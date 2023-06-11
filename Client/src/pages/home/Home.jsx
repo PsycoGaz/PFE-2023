@@ -6,9 +6,14 @@ import './Home.scss'
 import UC from '../../assets/svgUC.svg'
 import Featured from '../../components/featured/Featured'
 import { Link } from 'react-router-dom';
-
-
-
+import plombier from '../../images/plombier.png';
+import electricien from '../../images/electrecien.png';
+import electronique from '../../images/electronique.png';
+import menuisier from '../../images/menuisier.png';
+import sodure  from '../../images/sodure.png';
+import meca from '../../images/meca.png';
+import jardinage from '../../images/jardinage.png';
+import autres from '../../images/autres.png';
 const Home = () => {
   const settings = {
     dots: true,
@@ -56,71 +61,44 @@ const Home = () => {
   const images = [
     {
       name: "photo1",
-      url: "https://img.freepik.com/free-vector/plumbing-service-advertising-banner-repairman-uniform-standing-with-wrench-hand-tools-box-near-sink_575670-1705.jpg?size=626&ext=jpg&ga=GA1.1.1663221353.1647532696&semt=sph",
+      url: '/src/images/plombier.png',
+      txt: 'Plomberie',
     },
     {
       name: "photo2",
-      url: "https://images.pexels.com/photos/2244746/pexels-photo-2244746.jpeg?auto=compress&cs=tinysrgb&w=600",
+      url: '/src/images/electrecien.png',
+      txt: 'Electricité',
     },
     {
       name: "photo3",
-      url: "https://images.pexels.com/photos/8005397/pexels-photo-8005397.jpeg?auto=compress&cs=tinysrgb&w=600",
+      url: '/src/images/electronique.png',
+      txt: 'Electronique',
     }, {
       name: "photo1",
-      url: "https://images.pexels.com/photos/14953886/pexels-photo-14953886.jpeg?auto=compress&cs=tinysrgb&w=600",
+      url: '/src/images/jardinage.png',
+      txt: 'Jardinage',
     },
     {
       name: "photo2",
-      url: "https://images.pexels.com/photos/2244746/pexels-photo-2244746.jpeg?auto=compress&cs=tinysrgb&w=600",
+      url: '/src/images/meca.png',
+      txt: 'Mecanique',
     },
     {
       name: "photo3",
-      url: "https://images.pexels.com/photos/8005397/pexels-photo-8005397.jpeg?auto=compress&cs=tinysrgb&w=600",
+      url: '/src/images/menuisier.png',
+      txt: 'Menuiserie',
     }, {
       name: "photo1",
-      url: "https://images.pexels.com/photos/14953886/pexels-photo-14953886.jpeg?auto=compress&cs=tinysrgb&w=600",
+      url: '/src/images/sodure.png',
+      txt: 'Sodure',
     },
     {
       name: "photo2",
-      url: "https://images.pexels.com/photos/2244746/pexels-photo-2244746.jpeg?auto=compress&cs=tinysrgb&w=600",
+      url: '/src/images/autres.png',
+      txt: 'Autres',
     },
-    {
-      name: "photo3",
-      url: "https://images.pexels.com/photos/8005397/pexels-photo-8005397.jpeg?auto=compress&cs=tinysrgb&w=600",
-    }, {
-      name: "photo1",
-      url: "https://images.pexels.com/photos/14953886/pexels-photo-14953886.jpeg?auto=compress&cs=tinysrgb&w=600",
-    },
-    {
-      name: "photo2",
-      url: "https://images.pexels.com/photos/2244746/pexels-photo-2244746.jpeg?auto=compress&cs=tinysrgb&w=600",
-    },
-    {
-      name: "photo3",
-      url: "https://images.pexels.com/photos/8005397/pexels-photo-8005397.jpeg?auto=compress&cs=tinysrgb&w=600",
-    }, {
-      name: "photo1",
-      url: "https://images.pexels.com/photos/14953886/pexels-photo-14953886.jpeg?auto=compress&cs=tinysrgb&w=600",
-    },
-    {
-      name: "photo2",
-      url: "https://images.pexels.com/photos/2244746/pexels-photo-2244746.jpeg?auto=compress&cs=tinysrgb&w=600",
-    },
-    {
-      name: "photo3",
-      url: "https://images.pexels.com/photos/8005397/pexels-photo-8005397.jpeg?auto=compress&cs=tinysrgb&w=600",
-    }, {
-      name: "photo1",
-      url: "https://images.pexels.com/photos/14953886/pexels-photo-14953886.jpeg?auto=compress&cs=tinysrgb&w=600",
-    },
-    {
-      name: "photo2",
-      url: "https://images.pexels.com/photos/2244746/pexels-photo-2244746.jpeg?auto=compress&cs=tinysrgb&w=600",
-    },
-    {
-      name: "photo3",
-      url: "https://images.pexels.com/photos/8005397/pexels-photo-8005397.jpeg?auto=compress&cs=tinysrgb&w=600",
-    }]
+   ]
+    console.log(images)
   return (
     <div className='main'>
       <img className='svg' src={UC} />
@@ -132,7 +110,7 @@ const Home = () => {
             return (
               <div className="item-slide" >
                 <img src={image.url} alt="" height={300} width={550}/>
-                <div >test</div>
+                <h2 >{image.txt}</h2>
               </div>
             );
           })}
